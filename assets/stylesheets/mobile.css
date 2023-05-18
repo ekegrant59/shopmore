@@ -1,0 +1,37 @@
+.nav-img{
+    scale: 0.9;
+}
+
+.offcanvas{
+    --bs-offcanvas-width:75%;
+}
+
+.intro{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.822), rgba(0, 0, 0, 0.493)), url('/assets/images/Sm\ 5.jpg');
+    height: 650px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* .seccol2{
+    color: #032c63;
+} */
+
+.bigger{
+    font-size: 40px;
+}
+
+.bigger1{
+    font-size: 30px;
+}
+
+.quote-txt{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.reduce{
+    margin-bottom: 0;
+}
