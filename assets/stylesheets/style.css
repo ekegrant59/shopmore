@@ -1,5 +1,5 @@
 body,html{
-    background-color: #00050c;
+    background-color: rgb(1, 9, 20);
     color: aliceblue;
     font-family: Gantari;
     height: 100%;
@@ -30,6 +30,7 @@ body,html{
 .offcanvas{
     --bs-offcanvas-width:60%;
     background-color:#010c1d;
+    --bs-offcanvas-height: 100%;
 }
 
 .nav-link{
@@ -39,6 +40,24 @@ body,html{
 .nav-link:hover{
     scale: 1.3;
     color: #032c63;
+}
+.img-gradient, .img-gradient2{
+    position: relative
+}
+
+.img-gradient::after{
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgb(2, 17, 37),rgba(2, 17, 37, 0.918),rgba(2, 17, 37, 0.548), rgba(0, 0, 0, 0.514));
+}
+.img-gradient2::after{
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgb(1, 21, 49),rgba(1, 21, 49, 0.719), rgba(1, 21, 49, 0)), rgba(0, 0, 0, 0.514);
 }
 
 @media screen and (max-width : 992px){
@@ -55,6 +74,28 @@ body,html{
         color: rgb(245, 219, 153);
     }
 
+    .img-gradient{
+        position: relative;
+    }
+    .img-gradient::after{
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient(rgb(2, 17, 37),rgba(2, 17, 37, 0.548), rgba(0, 0, 0, 0.11));
+    }
+    .img-gradient2::after{
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient( rgb(1, 21, 49),rgba(1, 21, 49, 0.719), rgba(1, 21, 49, 0)), rgba(0, 0, 0, 0.514);
+    }
+
+}
+
+.contact{
+    margin-top: auto;
 }
 
 .btn-close{
@@ -91,13 +132,13 @@ body,html{
 }
 
 .gradient{
-    background-image: linear-gradient(#00050c, #ffb80396, #032d63af, #032c63, #00050c);
+    background-image: linear-gradient(#010914, #ffb80396, #032d63af, #032c63, #010914);
     /* height: 200px; */
     color: rgb(255, 255, 255);
 }
 
-.deliver{
-    background-color: #010e201e;
+.deliver, .app{
+    background-color: rgb(1, 21, 49);
 }
 
 .design{
@@ -198,3 +239,27 @@ footer{
 .footer-link:hover{
     color: #ffb703;
 }
+
+.fw-small{
+    font-size: 15px;
+}
+
+.support-card{
+    background-color: #032d638f;
+    color: #ffffff;
+    border-radius: 20px;
+}
+.support-card:hover{
+    scale: 0.97; 
+}
+
+.support-logo{
+    background-color: rgb(3, 45, 99);
+    border-radius: 50%;
+}
+
+.bigger3{
+    font-size: 60px;
+    font-weight: 600;
+}
+

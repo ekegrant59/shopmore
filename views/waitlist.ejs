@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop More Express - Ready As The Wind</title>
+    <%- include('partials/head-links') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <section class="my-5 pt-3 px-0 container-fluid">
+        <div class="row m-0 p-lg-0 pt-5" style="background-color: rgb(2, 17, 37);">
+            <div class="col-12 col-lg pt-lg-4 pb-lg-0 pb-5 px-4 px-sm-4 pt-3">
+                <h1 class="bigger3 px-xl-5 pt-xl-5 px-lg-3 pb-3 pb-lg-0 ">One App for all your <span id="type" class="primcol"></span></h1>
+                <p class="fs-5 px-xl-5 px-lg-3 pb-lg-0 mb-0">Coming soon...</p>
+                <p class="px-xl-5 px-lg-3 pb-3 pb-lg-0">Be the first to be notified</p>
+                <a href="" class="btn btn-warning fw-bold mx-xl-5 mx-lg-3 mb-lg-3 mt-3 mb-3" style="color: rgb(3, 45, 99);">Join Waitlist</a>
+            </div>
+            <div class="col-12 col-lg p-0 m-0 img-gradient">
+                <img src="/assets/images/Sm 15.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        
+        <div class="container-fluid my-5 p-5">
+            <h1 class="py-3 fw-bold ">The ShopMore Express App makes sure that you can do everything on one platform.</h1>
+            <div class="row g-5 py-5">
+                <div class="col-12">
+                    <h2 class="fw-semibold">All Deliveries in One App</h2>
+                    <p class="fw-small">Downloading multiple apps to get multiple delivery types done is now a thing of the past.</p>
+                </div>
+                <div class="col-12">
+                    <h2 class="fw-semibold">Pilot Tracking</h2>
+                    <p class="fw-small">Watch your items go from pick up to delivery in real time! You can also share the tracking link with your customers.</p>
+                </div>
+                <div class="col-12">
+                    <h2 class="fw-semibold">Multi-point Deliveries</h2>
+                    <p class="fw-small">Got a lot of items to send out? You can use one pilot to make all your deliveries.</p>
+                </div>
+            </div>
+            <div class="row g-5 pb-5">
+                <div class="col-12">
+                    <h2 class="fw-semibold">Schedule Pickup</h2>
+                    <p class="fw-small">Need to have your item picked up at a specific time? We've got that covered.
+                    </p>
+                </div>
+                <div class="col-12">
+                    <h2 class="fw-semibold">Resend Orders</h2>
+                    <p class="fw-small">Think you've made an order before? It wasn't deja vu - our order resend feature is proof of that. Make it again without having to fill those details right from the start.</p>
+                </div>
+                <div class="col-12">
+                    <h2 class="fw-semibold">Saved Adresses</h2>
+                    <p class="fw-small">You can save your addresses for next time, so you won't have to type it again. Just tap and keep things moving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
+</body>
+<script>
+    var options = {
+    strings: ['Deliveries', 'Errands', 'Dropoffs', 'Pickups'],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 800,
+    loop: true,
+    loopCount: Infinity
+    };
+
+    var typed = new Typed('#type', options);
+</script>
+</html>

@@ -4,6 +4,7 @@
 
 .offcanvas{
     --bs-offcanvas-width:75%;
+    font-size: 18px;
 }
 
 .intro{
@@ -18,13 +19,14 @@
     color: #032c63;
 } */
 
-.bigger{
+.bigger, .bigger3{
     font-size: 40px;
 }
 
 .bigger1{
     font-size: 30px;
 }
+
 
 .quote-txt{
     font-size: 25px;
@@ -34,4 +36,18 @@
 
 .reduce{
     margin-bottom: 0;
+}
+.img-gradient::after{
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(rgb(2, 17, 37),rgba(2, 17, 37, 0.548), rgba(0, 0, 0, 0.11));
+}
+.img-gradient2::after{
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(rgb(0, 14, 33),rgba(0, 14, 33, 0.719), rgba(0, 14, 33, 0)), rgba(0, 0, 0, 0.514);
 }

@@ -31,6 +31,16 @@ app.use('/assets', express.static('assets'))
 app.get('/', (req,res)=>{
     res.render('index')
 })
+app.get('/waitlist', (req,res)=>{
+    res.render('waitlist')
+})
+app.get('/faq', (req,res)=>{
+    res.render('faq')
+})
+app.get('/support', (req,res)=>{
+    res.render('support')
+})
+
 
 const port = process.env.PORT || 3000
 app.listen(port, ()=>{
