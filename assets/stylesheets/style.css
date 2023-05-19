@@ -86,10 +86,10 @@ body,html{
     }
     .img-gradient2::after{
         content: '';
-        position: absolute;
+        /* position: absolute; */
         left: 0; top: 0;
         width: 100%; height: 100%;
-        background: linear-gradient( rgb(1, 21, 49),rgba(1, 21, 49, 0.719), rgba(1, 21, 49, 0)), rgba(0, 0, 0, 0.514);
+        background: linear-gradient(rgb(1, 21, 49),rgba(1, 21, 49, 0.719), rgba(1, 21, 49, 0)), rgba(0, 0, 0, 0.514);
     }
 
 }

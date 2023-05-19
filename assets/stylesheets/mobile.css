@@ -37,6 +37,12 @@
 .reduce{
     margin-bottom: 0;
 }
+.img-gradient{
+    position: relative;
+}
+.img-gradient2{
+    position: relative;
+}
 .img-gradient::after{
     content: '';
     position: absolute;
@@ -49,5 +55,5 @@
     position: absolute;
     left: 0; top: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(rgb(0, 14, 33),rgba(0, 14, 33, 0.719), rgba(0, 14, 33, 0)), rgba(0, 0, 0, 0.514);
+    /* background: linear-gradient(rgb(1, 21, 49),rgba(1, 21, 49, 0.719), rgba(0, 0, 0, 0.11)); */
 }
