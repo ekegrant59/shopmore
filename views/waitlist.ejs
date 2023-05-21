@@ -9,13 +9,50 @@
 </head>
 <body>
     <%- include('partials/navbar') %>
+    <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- <div class="modal-header"> -->
+             <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            <!-- </div> -->
+            <div class="modal-body waitlist-modal">
+                <form id="form">
+                    <div class="mb-3">
+                        <label for="FormControlInput1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="FormControlInput1" placeholder="Please input your name" name="name">
+                      </div>
+                    <div class="mb-3">
+                        <label for="FormControlInput2" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="FormControlInput2" placeholder="name@example.com" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput3" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="exampleFormControlInput3" placeholder="+2340000000000" name="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="select" class="form-label">Role</label>
+                        <select class="form-select" aria-label="Default select example" id="select">
+                            <option selected>Choose a Role</option>
+                            <option value="driver">Driver</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div>
+                    
+
+                    
+                    <button type="submit" id="join" class="btn btn-warning fw-bold" style="color: #032c63;">Join Waitlist</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
     <section class="my-5 pt-3 px-0 container-fluid">
         <div class="row m-0 p-lg-0 pt-5" style="background-color: rgb(2, 17, 37);">
             <div class="col-12 col-lg-5 pt-lg-4 pb-lg-0 pb-5 px-4 px-sm-4 pt-3">
                 <h1 class="bigger3 px-xl-5 pt-xl-5 px-lg-3 pb-3 pb-lg-0 ">One App for all your  <span id="type" class="primcol"></span></h1>
                 <p class="fs-5 px-xl-5 px-lg-3 pt-xl-5 pb-lg-0 mb-0">Coming soon...</p>
                 <p class="px-xl-5 px-lg-3 pb-3 pb-lg-0">Be the first to be notified</p>
-                <a href="" class="btn btn-warning fw-bold mx-xl-5 mx-lg-3 mb-lg-3 mt-3 mb-3 mt-xl-4 animate" style="color: rgb(3, 45, 99);">Join Waitlist</a>
+                <a href="" class="btn btn-warning fw-bold mx-xl-5 mx-lg-3 mb-lg-3 mt-3 mb-3 mt-xl-4 animate" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="color: rgb(3, 45, 99);">Join Waitlist</a>
             </div>
             <div class="col-12 col-lg p-0 m-0 img-gradient">
                 <img src="/assets/images/Sm 15.jpg" alt="" class="img-fluid">
@@ -70,7 +107,8 @@
     backSpeed: 100,
     backDelay: 800,
     loop: true,
-    loopCount: Infinity
+    loopCount: Infinity,
+    showCursor: false
     };
 
     var typed = new Typed('#type', options);

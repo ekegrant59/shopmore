@@ -298,3 +298,12 @@ footer{
     border-radius: 35px 35px 8px 35px;
     font-size: 30px;
 }
+
+.founder-img{
+    border-radius: 50%;
+}
+
+.waitlist-modal{
+    color: whitesmoke;
+    background-color: #032c63;
+}
