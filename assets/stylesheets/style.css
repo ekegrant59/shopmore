@@ -1,7 +1,7 @@
 body,html{
     background-color: rgb(1, 9, 20);
     color: aliceblue;
-    font-family: Gantari;
+    font-family: 'Gantari', sans-serif;
     height: 100%;
 }
 
@@ -243,6 +243,9 @@ footer{
 .fw-small{
     font-size: 15px;
 }
+.fw-small2{
+    font-size: 20px;
+}
 
 .support-card{
     background-color: #032d638f;
@@ -263,3 +266,35 @@ footer{
     font-weight: 600;
 }
 
+.animate{
+    user-select:none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+}
+
+.animate:hover{
+    transition-duration: 0.1s;
+    background-color: #d39907;
+    color: #032c63;
+    scale: 1.03;
+    border-color: #d39907;
+}
+
+.animate:active {
+    scale: 0.98;
+    color: #032c63;
+}
+
+.bottom{
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+}
+
+.btn-custom{
+    border-radius: 35px 35px 8px 35px;
+    font-size: 30px;
+}
