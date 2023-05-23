@@ -77,7 +77,8 @@
 }
 
 .iconic{
-    transition: all .2s;
+    transition: all 0.1s;
+    -webkit-transition:all 0.1s;
 }
 .facebook:hover{
     background-position: 0 0px;
