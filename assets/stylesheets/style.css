@@ -303,6 +303,10 @@ footer{
     border-radius: 50%;
 }
 
+.founder-quote{
+    font-size: 1.25rem;
+}
+
 .waitlist-modal{
     color: whitesmoke;
     background-color: #032c63;
