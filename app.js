@@ -11,6 +11,13 @@ const waitlistschema = require('./schema/waitlistschema')
 
 const adminkey = process.env.ADMINKEY
 
+const mongodb = process.env.MONGODB
+mongoose.connect(mongodb)
+.then(() => {
+   console.log('Connection successful')
+}).catch((err) => {
+    console.log(err, "Connection failed")
+})
 const app = express()
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
@@ -43,6 +50,27 @@ app.get('/faq', (req,res)=>{
 })
 app.get('/support', (req,res)=>{
     res.render('support')
+})
+
+app.post('/waitlist', (req,res)=>{
+    const details = req.body
+
+    run()
+    async function run(){
+        try {
+            const waitlist = new waitlistschema({
+                name: details.name,
+                email: details.email,
+                phone: details.phone,
+                role: details.role
+            })
+            await waitlist.save()
+        }
+        catch (err) {
+            console.log(err.message)
+        
+        }
+    }
 })
 
 app.get('/adminregister', (req,res)=>{

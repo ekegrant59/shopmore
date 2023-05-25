@@ -12,30 +12,29 @@
     <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <!-- <div class="modal-header"> -->
-             <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            <!-- </div> -->
             <div class="modal-body waitlist-modal">
+                <div class="success"><h2 class="primcol fw-bold text-center">You have successfully registered!!</h2></div>
                 <form id="form">
                     <div class="mb-3">
-                        <label for="FormControlInput1" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="FormControlInput1" placeholder="Please input your name" name="name">
+                        <label for="FormControlInput1" class="form-label name" >Name</label>
+                        <input type="text" class="form-control" id="FormControlInput1" placeholder="Please input your name" name="name" required>
                       </div>
                     <div class="mb-3">
-                        <label for="FormControlInput2" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="FormControlInput2" placeholder="name@example.com" name="email">
+                        <label for="FormControlInput2" class="form-label email">Email address</label>
+                        <input type="email" class="form-control" id="FormControlInput2" placeholder="name@example.com" name="email" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput3" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="exampleFormControlInput3" placeholder="+2340000000000" name="phone">
+                        <label for="exampleFormControlInput3" class="form-label phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="exampleFormControlInput3" placeholder="+2340000000000" name="phone" required>
                     </div>
                     <div class="mb-3">
                         <label for="select" class="form-label">Role</label>
-                        <select class="form-select" aria-label="Default select example" id="select" name="role">
+                        <select class="form-select role" aria-label="Default select example" id="select" name="role">
                             <option selected>Choose a Role</option>
                             <option value="driver">Driver</option>
                             <option value="customer">Customer</option>
                         </select>
+                        <p class="roleError text-danger fw-bold ps-2 mt-1">Please Select a Role</p>
                     </div>
                     
 
@@ -112,5 +111,33 @@
     };
 
     var typed = new Typed('#type', options);
+
+    const form = document.getElementById('form');
+    let roleError = document.querySelector('.roleError')
+    let success = document.querySelector('.success')
+    roleError.style.display = 'none'
+    success.style.display = 'none'
+
+    form.addEventListener('submit', (e)=>{
+        e.preventDefault()
+        let role = document.querySelector('.role').value
+        // console.log(role)
+        if (role == 'Choose a Role'){
+            roleError.style.display = 'block'
+        } else{
+            roleError.style.display = 'none'
+            const formData = new FormData(form);
+            const payload = new URLSearchParams(formData);
+
+            fetch('/waitlist',{
+                method: 'POST',
+                body: payload
+            }).then(res => res.json())
+
+            form.style.display = 'none'
+            success.style.display = 'block'
+        }
+
+    })
 </script>
 </html>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const mongodb = process.env.MONGODB
-// mongoose.connect(mongodb)
+mongoose.connect(mongodb)
 
 const adminschema = new mongoose.Schema({
     email: String,
