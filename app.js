@@ -137,7 +137,7 @@ app.post('/adminlogin', async (req,res)=>{
   const admin = await adminschema.findOne({email})
   try{
     if (!admin){
-        req.flash('danger','Incorrect email')
+        req.flash('danger','User Not Found')
         res.redirect('/admin')
     } else{
         bcrypt.compare(password, admin.password, async (err,data)=>{
@@ -157,7 +157,7 @@ app.post('/adminlogin', async (req,res)=>{
 
                 res.redirect('/admin')
             } else{
-                req.flash('danger', 'incorrect password')
+                req.flash('danger', 'Incorrect Password, Please try again')
                 res.redirect('/admin')
                 }
             })
