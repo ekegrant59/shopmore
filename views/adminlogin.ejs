@@ -12,10 +12,10 @@
     <div class="login mx-auto col-sm-6 col-9 mt-5">
         <h1 class="fw-bold text-center">Admin Log In</h1>
 
-        <div >
-            <%- messages('messages', locals) %> 
-        </div>
         <form action="/adminlogin" method="post" class="mt-5 needs-validation" novalidate>
+            <div class="my-2">
+                <%- messages('messages', locals) %> 
+            </div>
             <div class="row mb-3">
               <label for="inputEmail3" class="col-lg-3 col-form-label">Email</label>
               <div class="col-lg-9">

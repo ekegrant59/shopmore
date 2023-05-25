@@ -19,6 +19,8 @@ mongoose.connect(mongodb)
     console.log(err, "Connection failed")
 })
 const app = express()
+app.set('view engine', 'ejs')
+app.use('/assets', express.static('assets'))
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
 app.use(express.json())
@@ -36,8 +38,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.set('view engine', 'ejs')
-app.use('/assets', express.static('assets'))
+
 
 app.get('/', (req,res)=>{
     res.render('index')
@@ -127,45 +128,44 @@ function protectAdminRoute(req, res, next){
   }
 }
 
-app.post('/adminlogin', (req,res)=>{
+app.post('/adminlogin', async (req,res)=>{
   const loginInfo = req.body
 
   const email = loginInfo.email
   const password = loginInfo.password
 
-  adminschema.findOne({email})
-  .then((admin)=>{
-      adminschema.findOne({email: email}, (err,details)=>{
-          if(!details){
-              req.flash('danger','Incorrect email')
-              res.redirect('/admin')
-          } else{
-              bcrypt.compare(password, admin.password, async (err,data)=>{
-                  if(data){
-                      const payload1 = {
-                          user:{
-                              email: admin.email
-                          }
-                      }
-                      const token1 = jwt.sign(payload1, adminkey,{
-                          expiresIn: '3600s'
-                      })
+  const admin = await adminschema.findOne({email})
+  try{
+    if (!admin){
+        req.flash('danger','Incorrect email')
+        res.redirect('/admin')
+    } else{
+        bcrypt.compare(password, admin.password, async (err,data)=>{
+            if(data){
+                const payload1 = {
+                    user:{
+                        email: admin.email
+                    }
+                }
+                const token1 = jwt.sign(payload1, adminkey,{
+                    expiresIn: '3600s'
+                })
 
-                      res.cookie('admintoken', token1, {
-                          httpOnly: false
-                      })
+                res.cookie('admintoken', token1, {
+                    httpOnly: false
+                })
 
-                      res.redirect('/admin')
-                  } else{
-                      req.flash('danger', 'incorrect password')
-                      res.redirect('/admin')
-                  }
-              })
-          }
-      })
-  }).catch((err)=>{
-      console.log(err)
-  })
+                res.redirect('/admin')
+            } else{
+                req.flash('danger', 'incorrect password')
+                res.redirect('/admin')
+                }
+            })
+        }
+  } catch(err){
+    console.log(err)
+  }
+
 })
 
 
