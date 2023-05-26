@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,103 @@
     <%- include('partials/head-links') %>
 </head>
 <body>
-    
+    <h1 class="mt-5 mb-3 fw-bold text-center bigger">Waitlisted Users</h1>
+    <div class="mb-4 col-7 col-md-5 col-lg-3 mx-auto">
+        <div class="row g-0">
+            <label for="select" class="col-5 col-form-label">Sort by Role</label>
+            <div class="col-7">
+                <select class="form-select role" aria-label="Default select example" id="select" name="role">
+                    <option selected value="all">All</option>
+                    <option value="driver">Driver</option>
+                    <option value="customer">Customer</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="px-auto px-md-4 mt-5">
+        <div class="row container-fluid text-center mt-3 mx-0">
+            <div class="col-3">
+                <p class="fw-bold">NAME</p>
+            </div>
+            <div class="col-3">
+                <p class="fw-bold" >EMAIL</p>
+            </div>
+            <div class="col-3">
+                <p class="fw-bold">PHONE</p>
+            </div>
+            <div class="col-3">
+                <p class="fw-bold">ROLE</p>
+            </div>
+        </div>
+
+        <ol class="waitlists">
+            <% waitlists.forEach(waitlist =>{ %>
+                <li class="mt-1">
+                    <div class="row gx-4 text-center m-0">
+                        <div class="col-3 overflow-x-scroll px-3"><%= waitlist.name %> </div>
+                        <div class="col-3 overflow-x-scroll px-3"><%= waitlist.email %></div>
+                        <div class="col-3 overflow-x-scroll px-3" ><%= waitlist.phone %></div>
+                        <div class="col-3 px-3" ><%= waitlist.role %></div>
+                    </div>
+                </li>
+            <% }) %>
+        </ol>
+        <ol class="riders">
+            <% riders.forEach(rider =>{ %>
+                <li class="mt-1">
+                    <div class="row gx-4 text-center m-0">
+                        <div class="col-3 overflow-x-scroll px-3"><%= rider.name %> </div>
+                        <div class="col-3 overflow-x-scroll px-3"><%= rider.email %></div>
+                        <div class="col-3 overflow-x-scroll px-3" ><%= rider.phone %></div>
+                        <div class="col-3 px-3" ><%= rider.role %></div>
+                    </div>
+                </li>
+            <% }) %>
+        </ol>
+        <ol class="users">
+            <% users.forEach(user =>{ %>
+                <li class="mt-1">
+                    <div class="row gx-4 text-center m-0">
+                        <div class="col-3 overflow-x-scroll px-3"><%= user.name %> </div>
+                        <div class="col-3 overflow-x-scroll px-3"><%= user.email %></div>
+                        <div class="col-3 overflow-x-scroll px-3" ><%= user.phone %></div>
+                        <div class="col-3 px-3" ><%= user.role %></div>
+                    </div>
+                </li>
+            <% }) %>
+        </ol>
+    </div>
 </body>
+
+<script>
+    let select = document.querySelector('#select')
+    let waitlists = document.querySelector('.waitlists')
+    let riders = document.querySelector('.riders')
+    let users = document.querySelector('.users')
+
+    waitlists.style.display = 'block'
+    riders.style.display = 'none'
+    users.style.display = 'none'
+    
+        select.addEventListener('change', (e)=>{
+            let selval = e.target.value
+            if (selval == 'all') {
+                // console.log(selval)
+                waitlists.style.display = 'block'
+                riders.style.display = 'none'
+                users.style.display = 'none'
+            } else if (selval == 'driver'){
+                // console.log(selval)
+                waitlists.style.display = 'none'
+                riders.style.display = 'block'
+                users.style.display = 'none'
+            } else if (selval == 'customer'){
+                // console.log(selval)
+                waitlists.style.display = 'none'
+                riders.style.display = 'none'
+                users.style.display = 'block'
+            }
+        })
+
+</script>
 </html>

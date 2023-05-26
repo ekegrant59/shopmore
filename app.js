@@ -107,7 +107,9 @@ app.post('/adminregister', async(req,res)=>{
 app.get('/admin',protectAdminRoute, async (req,res)=>{
     try{
       const waitlists = await waitlistschema.find()
-        res.render('admin', {waitlists: waitlists})
+      const riders = await waitlistschema.find({role: 'driver'})
+      const users = await waitlistschema.find({role: 'customer'})
+        res.render('admin', {waitlists: waitlists, riders: riders, users: users})
     } catch(err){
         console.log(err)
     }

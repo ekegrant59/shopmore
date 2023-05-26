@@ -12,7 +12,7 @@ body,html{
 
 .navbar-custom{
     /* border-bottom: 1px solid rgb(2, 44, 44); */
-    background-color: rgba(255, 184, 3, 0.95) !important;
+    background-color: rgba(255, 184, 3, 0.9) !important;
     font-weight: 600;
     /* box-sizing: border-box; */
 }
@@ -310,4 +310,35 @@ footer{
 .waitlist-modal{
     color: whitesmoke;
     background-color: #032c63;
+}
+
+.bigger4, .bigger5{
+    font-size: 60px;
+}
+
+.accordion{
+    --bs-accordion-color: white;
+    --bs-accordion-bg: rgb(1, 9, 20);
+    --bs-accordion-btn-color: white;
+    --bs-accordion-btn-bg: rgb(1, 9, 20);
+    --bs-accordion-btn-focus-border-color: rgb(1, 9, 20);
+    --bs-accordion-btn-focus-box-shadow: rgb(1, 9, 20);
+    --bs-accordion-active-color: white;
+    --bs-accordion-active-bg: rgb(1, 9, 20);
+    --bs-accordion-btn-padding-x: 0px;
+    /* --bs-accordion-btn-padding-y: 10px; */
+    --bs-accordion-body-padding-x: 0px;
+    /* --bs-accordion-body-padding-y: 25px; */
+    --bs-accordion-border-color: rgba(128, 128, 128, 0.568);
+    --bs-accordion-border-width: 0px
+}
+
+.accordion-flush  .accordion-item:first-child{
+    border-top: 1px solid rgba(128, 128, 128, 0.568);
+}
+.accordion-flush  .accordion-item:last-child{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.568);
+}
+.accordion-flush  .accordion-item{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.568);
 }
