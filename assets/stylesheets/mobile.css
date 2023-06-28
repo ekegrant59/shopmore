@@ -103,3 +103,14 @@
 .bigger5{
     font-size: 40px;
 }
+
+.myframe{
+    width: 380px;
+    height: 200px;
+}
+@media screen and (max-width : 400px){
+    .myframe{
+        width: 300px;
+        height: 200px;
+    }
+}

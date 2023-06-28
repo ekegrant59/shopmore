@@ -31,6 +31,8 @@ body,html{
     --bs-offcanvas-width:60%;
     background-color:#010c1d;
     --bs-offcanvas-height: 100%;
+    --bs-offcanvas-zindex: 5000000000 !important; 
+    z-index: var(--bs-offcanvas-zindex);
 }
 
 .nav-link{
@@ -60,7 +62,24 @@ body,html{
     background: linear-gradient(to right, rgb(1, 21, 49),rgba(1, 21, 49, 0.719), rgba(1, 21, 49, 0)), rgba(0, 0, 0, 0.514);
 }
 
+@media screen and (max-width : 1400px){
+    .myframe{
+        width:500px;
+        height: 300px;
+    }
+}
+@media screen and (max-width : 1200px){
+    .myframe{
+        width:400px;
+        height: 300px;
+    }
+}
 @media screen and (max-width : 992px){
+    .myframe{
+        width: 700px;
+        height: 400px;
+    }
+
     .offcanvas{
         font-size: 20px;
     }
@@ -341,4 +360,18 @@ footer{
 }
 .accordion-flush  .accordion-item{
     border-bottom: 1px solid rgba(128, 128, 128, 0.568);
+}
+
+
+@media screen and (max-width : 768px){
+    .myframe{
+        width: 500px;
+        height: 300px;
+    }
+}
+@media screen and (max-width : 576px){
+    .myframe{
+        width: 400px;
+        height: 200px;
+    }
 }
